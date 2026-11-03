@@ -1,18 +1,21 @@
 package app.ex4.models;
 
-public class EmailCuPrefix implements Notificator {
+public class CuPrefix implements Notificator {
     private final String prefix;
+    private Notificator interior;
 
-    public EmailCuPrefix(String prefix) {
+    public CuPrefix(String prefix, Notificator interior) {
         if (prefix == null || prefix.isEmpty()) {
             throw new IllegalArgumentException("Prefix cannot be empty");
         }
         this.prefix = prefix;
+        this.interior = interior;
+
     }
 
     @Override
     public String getNume() {
-        return "Email + prefix";
+        return interior.getNume() + " + " + "prefix";
     }
 
     @Override
@@ -20,6 +23,6 @@ public class EmailCuPrefix implements Notificator {
         if (mesaj == null || mesaj.isBlank()) {
             throw new IllegalArgumentException("Message cannot be empty");
         }
-        System.out.println("[EMAIL] " + prefix + mesaj);
+        System.out.println("[EMAIL] " + prefix +" " + mesaj);
     }
 }

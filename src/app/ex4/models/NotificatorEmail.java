@@ -2,6 +2,11 @@ package app.ex4.models;
 
 public class NotificatorEmail implements Notificator {
 
+    public NotificatorEmail(){
+        
+    }
+
+
     @Override
     public String getNume() {
         return "Email";

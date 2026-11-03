@@ -1,10 +1,16 @@
 package app.ex4.models;
 
-public class SmsCuJurnal implements Notificator {
+public class CuJurnal implements Notificator {
+
+    private Notificator interior;
+
+    public CuJurnal(Notificator interior){
+        this.interior = interior;
+    }
 
     @Override
     public String getNume() {
-        return "SMS + jurnal";
+        return interior.getNume() + " " + "+ Jurnal";
     }
 
     @Override

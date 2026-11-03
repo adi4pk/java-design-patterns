@@ -4,9 +4,9 @@ public class Comanda {
     private final String client;
     private final double greutateKg;
     private final double distantaKm;
-    private final TipLivrare tip;
+    private final StrategyLivrare tip;
 
-    public Comanda(String client, double greutateKg, double distantaKm, TipLivrare tip) {
+    public Comanda(String client, double greutateKg, double distantaKm, StrategyLivrare tip) {
         if (greutateKg <= 0) {
             throw new IllegalArgumentException("Weight must be positive");
         }
@@ -17,35 +17,24 @@ public class Comanda {
         this.greutateKg = greutateKg;
         this.distantaKm = distantaKm;
         this.tip = tip;
+
     }
 
     public String getClient() {
         return client;
     }
 
+    public StrategyLivrare getTip(){
+        return tip;
+    }
+
+
+
     public String numeLivrare() {
-        switch (tip) {
-            case STANDARD:
-                return "Standard";
-            case EXPRESS:
-                return "Express";
-            case GRATUITA:
-                return "Gratuita";
-            default:
-                throw new IllegalStateException("Unknown delivery type");
-        }
+       return  tip.getNume();
     }
 
     public double cost() {
-        switch (tip) {
-            case STANDARD:
-                return 5 + 0.5 * greutateKg + 0.1 * distantaKm;
-            case EXPRESS:
-                return 12 + 1.0 * greutateKg + 0.25 * distantaKm;
-            case GRATUITA:
-                return 0;
-            default:
-                throw new IllegalStateException("Unknown delivery type");
-        }
+       return this.getTip().calculeazaCost(greutateKg,distantaKm);
     }
 }

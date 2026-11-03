@@ -3,6 +3,12 @@ package app.ex4.models;
 public class NotificatorSms implements Notificator {
     public static final int LUNGIME_MAXIMA = 30;
 
+
+    public NotificatorSms(){
+
+    }
+
+
     @Override
     public String getNume() {
         return "SMS";

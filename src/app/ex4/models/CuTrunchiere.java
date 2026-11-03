@@ -1,18 +1,20 @@
 package app.ex4.models;
 
-public class SmsCuTrunchiere implements Notificator {
+public class CuTrunchiere implements Notificator {
     private final int lungimeMaxima;
+    private Notificator interior;
 
-    public SmsCuTrunchiere(int lungimeMaxima) {
+    public CuTrunchiere(int lungimeMaxima, Notificator interior) {
         if (lungimeMaxima <= 0) {
             throw new IllegalArgumentException("Length limit must be positive");
         }
         this.lungimeMaxima = lungimeMaxima;
+        this.interior = interior;
     }
 
     @Override
     public String getNume() {
-        return "SMS + trunchiere";
+        return interior.getNume() + " " + "+ trunchiere";
     }
 
     @Override

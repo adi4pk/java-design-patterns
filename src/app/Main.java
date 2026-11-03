@@ -9,11 +9,11 @@ import app.ex6.Testare6;
 
 public class Main {
     public static void main(String[] args) {
-        Testare1.ruleaza();
-        Testare2.ruleaza();
-        Testare3.ruleaza();
+//        Testare1.ruleaza();
+//        Testare2.ruleaza();
+//        Testare3.ruleaza();
         Testare4.ruleaza();
-        Testare5.ruleaza();
-        Testare6.ruleaza();
+//        Testare5.ruleaza();
+//        Testare6.ruleaza();
     }
 }
