@@ -28,9 +28,9 @@ public class Testare4 {
         System.out.println(jurnal.getNume());
         jurnal.trimite(scurt);
 
-        Notificator SmsCuTrunchiereSiJurnal = new CuJurnal(new CuTrunchiere(100, notSms));
-        System.out.println(SmsCuTrunchiereSiJurnal.getNume());
-        SmsCuTrunchiereSiJurnal.trimite(scurt);
+        Notificator smsCuTrunchiereSiJurnal = new CuJurnal(new CuTrunchiere(30, notSms));
+        System.out.println(smsCuTrunchiereSiJurnal.getNume());
+        smsCuTrunchiereSiJurnal.trimite(lung);
 
 //        Notificator jurnal = new CuJurnal();
 //        System.out.println(jurnal.getNume());

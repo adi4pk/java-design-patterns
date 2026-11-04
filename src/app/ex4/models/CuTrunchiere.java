@@ -19,15 +19,11 @@ public class CuTrunchiere implements Notificator {
 
     @Override
     public void trimite(String mesaj) {
-        if (mesaj == null || mesaj.isBlank()) {
-            throw new IllegalArgumentException("Message cannot be empty");
+        if(mesaj!=null&&mesaj.length()>lungimeMaxima){
+            interior.trimite(mesaj.substring(0,lungimeMaxima));
+        }else{
+            interior.trimite(mesaj);
         }
-        if (mesaj.length() > lungimeMaxima) {
-            mesaj = mesaj.substring(0, lungimeMaxima);
-        }
-        if (mesaj.length() > NotificatorSms.LUNGIME_MAXIMA) {
-            throw new IllegalArgumentException("Message exceeds SMS length limit");
-        }
-        System.out.println("[SMS] " + mesaj);
+
     }
 }

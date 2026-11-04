@@ -15,13 +15,8 @@ public class CuJurnal implements Notificator {
 
     @Override
     public void trimite(String mesaj) {
-        if (mesaj == null || mesaj.isBlank()) {
-            throw new IllegalArgumentException("Message cannot be empty");
-        }
-        System.out.println("[JURNAL] catre SMS: " + mesaj);
-        if (mesaj.length() > NotificatorSms.LUNGIME_MAXIMA) {
-            throw new IllegalArgumentException("Message exceeds SMS length limit");
-        }
-        System.out.println("[SMS] " + mesaj);
+
+        System.out.println("[JURNAL] catre"+interior.getNume()+": "+ mesaj);
+        interior.trimite(mesaj);
     }
 }

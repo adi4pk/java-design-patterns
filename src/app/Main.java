@@ -12,8 +12,8 @@ public class Main {
 //        Testare1.ruleaza();
 //        Testare2.ruleaza();
 //        Testare3.ruleaza();
-        Testare4.ruleaza();
-//        Testare5.ruleaza();
+//        Testare4.ruleaza();
+        Testare5.ruleaza();
 //        Testare6.ruleaza();
     }
 }
