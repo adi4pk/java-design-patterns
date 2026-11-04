@@ -4,12 +4,12 @@ public class Comanda {
     private final int numar;
     private final String client;
 
-    public Comanda(String client, GeneratorNumere generator) {
+    public Comanda(String client) {
         if (client == null || client.isBlank()) {
             throw new IllegalArgumentException("Client is required");
         }
         this.client = client;
-        this.numar = generator.urmatorul();
+        this.numar = GeneratorNumere.getInstance().urmatorul();
     }
 
     public int getNumar() {

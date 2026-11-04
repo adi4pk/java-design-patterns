@@ -4,9 +4,9 @@ public class Retur {
     private final int numar;
     private final Comanda comanda;
 
-    public Retur(Comanda comanda, GeneratorNumere generator) {
+    public Retur(Comanda comanda) {
         this.comanda = comanda;
-        this.numar = generator.urmatorul();
+        this.numar = GeneratorNumere.getInstance().urmatorul();
     }
 
     public String descriere() {
